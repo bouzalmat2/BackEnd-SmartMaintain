@@ -24,4 +24,9 @@ public  abstract class Utilisateur {
     private String email;
     private String motDePasse;
 
+    @Transient
+    public String getRole() {
+        return this.getClass().getAnnotation(DiscriminatorValue.class).value();
+    }
+
 }

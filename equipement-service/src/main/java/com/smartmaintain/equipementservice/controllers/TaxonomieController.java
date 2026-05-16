@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/taxonomies")
+@RequestMapping("/taxonomies")
 public class TaxonomieController {
 
     private final TaxonomieService taxonomieService;

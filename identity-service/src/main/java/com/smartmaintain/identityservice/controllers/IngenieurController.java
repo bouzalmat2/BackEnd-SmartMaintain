@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/ingenieurs")
+@RequestMapping("/ingenieurs")
 @PreAuthorize("hasAuthority('INGENIEUR') or hasAuthority('ADMIN')")
 public class IngenieurController {
 

@@ -33,4 +33,15 @@ public class EquipementController {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Equipement> getById(@PathVariable Long id) {
+        return ResponseEntity.ok(service.getById(id));
+    }
+
+    @PutMapping("/{id}")
+    public Equipement update(@PathVariable Long id, @RequestBody Equipement e) {
+        e.setId(id);
+        return service.save(e);
+    }
 }

@@ -14,7 +14,10 @@ public class EquipementService {
     public EquipementService(EquipementRepository repository) {
         this.repository = repository;
     }
-
+    public Equipement getById(Long id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Equipement not found with id: " + id));
+    }
     public List<Equipement> getAll() { return repository.findAll(); }
 
     public List<Equipement> getByTaxonomy(String code) {
